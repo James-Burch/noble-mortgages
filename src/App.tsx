@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/global.css";
 
 // Components
+import ContactBar from "./components/ContactBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -11,6 +12,11 @@ import ProductCards from "./components/ProductCards";
 import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
+
+// Pages
+import MortgagesOverview from "./pages/MortgagesOverview";
+import FirstTimeBuyers from "./pages/FirstTimeBuyers";
+import Remortgage from "./pages/Remortgage";
 
 // Data
 import { mortgageProducts, insuranceProducts } from "./data/products";
@@ -58,6 +64,8 @@ function App() {
                     type="mortgage"
                   />
 
+                  <ContactBar />
+
                   <ProductCards
                     title="Insurance Protection"
                     products={insuranceProducts}
@@ -90,16 +98,15 @@ function App() {
               }
             />
 
-            {/* Other placeholder routes */}
+            {/* Mortgage Pages */}
+            <Route path="/mortgages" element={<MortgagesOverview />} />
             <Route
-              path="/mortgages"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Mortgages</h1>
-                  <p>Mortgages page coming soon...</p>
-                </div>
-              }
+              path="/mortgages/first-time-buyers"
+              element={<FirstTimeBuyers />}
             />
+            <Route path="/mortgages/remortgage" element={<Remortgage />} />
+
+            {/* Other placeholder routes */}
             <Route
               path="/insurance"
               element={

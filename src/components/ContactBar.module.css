@@ -1,0 +1,134 @@
+/* Contact Bar Component Styles */
+.contactBar {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-sm);
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex: 1;
+}
+
+.contactText {
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+}
+
+.email {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.email:hover,
+.email:focus {
+  color: var(--color-primary-light);
+  outline: none;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.whatsappLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+  background: rgba(79, 209, 199, 0.1);
+  border: 1px solid rgba(79, 209, 199, 0.2);
+}
+
+.whatsappLink:hover,
+.whatsappLink:focus {
+  background: rgba(79, 209, 199, 0.2);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.whatsappIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.phoneIcon {
+  font-size: var(--font-size-lg);
+}
+
+.whatsappText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.whatsappLabel {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: var(--font-weight-normal);
+}
+
+.whatsappNumber {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .content {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .whatsappLink {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
