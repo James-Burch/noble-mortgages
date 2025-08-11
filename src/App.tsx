@@ -13,7 +13,13 @@ import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
 
-// Mortgage Pages
+// Insurance/Mortgage Pages
+import InsuranceOverview from "./pages/InsuranceOverview";
+import LifeInsurance from "./pages/LifeInsurance";
+import IncomeProtection from "./pages/IncomeProtection";
+import CriticalIllness from "./pages/CriticalIllness";
+import AccidentSicknessUnemployment from "./pages/AccidentSicknessUnemployment";
+import HomeBuildingsContents from "./pages/HomeBuildingsContents";
 import MortgagesOverview from "./pages/MortgagesOverview";
 import FirstTimeBuyers from "./pages/FirstTimeBuyers";
 import Remortgage from "./pages/Remortgage";
@@ -23,6 +29,9 @@ import NewBuild from "./pages/NewBuild";
 import HelpToBuy from "./pages/HelpToBuy";
 import LimitedCompanies from "./pages/LimitedCompanies";
 import BridgingLoans from "./pages/BridgingLoans";
+
+// Other Pages
+import About from "./pages/About";
 
 // Data
 import { mortgageProducts, insuranceProducts } from "./data/products";
@@ -87,22 +96,7 @@ function App() {
               }
             />
 
-            <Route
-              path="/about"
-              element={
-                <>
-                  <Hero
-                    title="About Noble Mortgages"
-                    subtitle="Your trusted mortgage and insurance advisors"
-                    backgroundImage="/images/apartmentblock.webp"
-                  />
-                  <div className="container" style={{ padding: "2rem 0" }}>
-                    <h2>About Us</h2>
-                    <p>Learn more about our team and services...</p>
-                  </div>
-                </>
-              }
-            />
+            <Route path="/about" element={<About />} />
 
             {/* Mortgage Pages */}
             <Route path="/mortgages" element={<MortgagesOverview />} />
@@ -135,60 +129,27 @@ function App() {
               }
             />
 
-            {/* Insurance placeholder routes */}
-            <Route
-              path="/insurance"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Insurance</h1>
-                  <p>Insurance page coming soon...</p>
-                </div>
-              }
-            />
+            {/* Insurance Pages */}
+            <Route path="/insurance" element={<InsuranceOverview />} />
             <Route
               path="/insurance/life-insurance"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Life Insurance</h1>
-                  <p>Life Insurance page coming soon...</p>
-                </div>
-              }
+              element={<LifeInsurance />}
             />
             <Route
               path="/insurance/income-protection"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Income Protection</h1>
-                  <p>Income Protection page coming soon...</p>
-                </div>
-              }
+              element={<IncomeProtection />}
             />
             <Route
               path="/insurance/critical-illness"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Critical Illness</h1>
-                  <p>Critical Illness page coming soon...</p>
-                </div>
-              }
+              element={<CriticalIllness />}
             />
             <Route
               path="/insurance/accident-sickness-unemployment"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Accident, Sickness & Unemployment</h1>
-                  <p>ASU Insurance page coming soon...</p>
-                </div>
-              }
+              element={<AccidentSicknessUnemployment />}
             />
             <Route
               path="/insurance/home-buildings-contents"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Home, Buildings & Contents Insurance</h1>
-                  <p>Home Insurance page coming soon...</p>
-                </div>
-              }
+              element={<HomeBuildingsContents />}
             />
 
             {/* Other pages */}
