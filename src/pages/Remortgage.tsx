@@ -7,7 +7,7 @@ const Remortgage: React.FC = () => {
   return (
     <PageTemplate
       title="Remortgage"
-      subtitle="Save money with a better deal on your existing property"
+      subtitle="Save money or release equity with our comprehensive remortgage service.y"
       backgroundImage="/images/image2.webp"
     >
       <div className={styles.container}>

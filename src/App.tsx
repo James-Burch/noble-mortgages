@@ -13,10 +13,16 @@ import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
 
-// Pages
+// Mortgage Pages
 import MortgagesOverview from "./pages/MortgagesOverview";
 import FirstTimeBuyers from "./pages/FirstTimeBuyers";
 import Remortgage from "./pages/Remortgage";
+import HomeMover from "./pages/HomeMover";
+import BuyToLet from "./pages/BuyToLet";
+import NewBuild from "./pages/NewBuild";
+import HelpToBuy from "./pages/HelpToBuy";
+import LimitedCompanies from "./pages/LimitedCompanies";
+import BridgingLoans from "./pages/BridgingLoans";
 
 // Data
 import { mortgageProducts, insuranceProducts } from "./data/products";
@@ -105,8 +111,31 @@ function App() {
               element={<FirstTimeBuyers />}
             />
             <Route path="/mortgages/remortgage" element={<Remortgage />} />
+            <Route path="/mortgages/home-mover" element={<HomeMover />} />
+            <Route path="/mortgages/buy-to-let" element={<BuyToLet />} />
+            <Route path="/mortgages/new-build" element={<NewBuild />} />
+            <Route path="/mortgages/help-to-buy" element={<HelpToBuy />} />
+            <Route
+              path="/mortgages/limited-companies"
+              element={<LimitedCompanies />}
+            />
+            <Route
+              path="/mortgages/bridging-loans"
+              element={<BridgingLoans />}
+            />
 
-            {/* Other placeholder routes */}
+            {/* Placeholder routes for remaining mortgage pages */}
+            <Route
+              path="/mortgages/self-employed"
+              element={
+                <div className="container" style={{ padding: "2rem 0" }}>
+                  <h1>Self-Employed</h1>
+                  <p>Self-Employed mortgages page coming soon...</p>
+                </div>
+              }
+            />
+
+            {/* Insurance placeholder routes */}
             <Route
               path="/insurance"
               element={
@@ -117,20 +146,58 @@ function App() {
               }
             />
             <Route
-              path="/calculators"
+              path="/insurance/life-insurance"
               element={
                 <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Calculators</h1>
-                  <p>Calculators page coming soon...</p>
+                  <h1>Life Insurance</h1>
+                  <p>Life Insurance page coming soon...</p>
                 </div>
               }
             />
             <Route
-              path="/faqs"
+              path="/insurance/income-protection"
               element={
                 <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>FAQs</h1>
-                  <p>FAQs page coming soon...</p>
+                  <h1>Income Protection</h1>
+                  <p>Income Protection page coming soon...</p>
+                </div>
+              }
+            />
+            <Route
+              path="/insurance/critical-illness"
+              element={
+                <div className="container" style={{ padding: "2rem 0" }}>
+                  <h1>Critical Illness</h1>
+                  <p>Critical Illness page coming soon...</p>
+                </div>
+              }
+            />
+            <Route
+              path="/insurance/accident-sickness-unemployment"
+              element={
+                <div className="container" style={{ padding: "2rem 0" }}>
+                  <h1>Accident, Sickness & Unemployment</h1>
+                  <p>ASU Insurance page coming soon...</p>
+                </div>
+              }
+            />
+            <Route
+              path="/insurance/home-buildings-contents"
+              element={
+                <div className="container" style={{ padding: "2rem 0" }}>
+                  <h1>Home, Buildings & Contents Insurance</h1>
+                  <p>Home Insurance page coming soon...</p>
+                </div>
+              }
+            />
+
+            {/* Other pages */}
+            <Route
+              path="/mortgage-calculator"
+              element={
+                <div className="container" style={{ padding: "2rem 0" }}>
+                  <h1>Mortgage Calculator</h1>
+                  <p>Calculator page coming soon...</p>
                 </div>
               }
             />
@@ -143,7 +210,8 @@ function App() {
                 </div>
               }
             />
-            {/* Catch all other routes for now */}
+
+            {/* Catch all other routes */}
             <Route
               path="*"
               element={
