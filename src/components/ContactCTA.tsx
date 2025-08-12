@@ -34,8 +34,8 @@ const ContactCTA: React.FC = () => {
             <div className={styles.contactMethods}>
               <div className={styles.phoneContact}>
                 <h3 className={styles.contactTitle}>Call Us Today</h3>
-                <a href="tel:+441234567890" className={styles.phoneNumber}>
-                  01234 567 890
+                <a href="tel:+447956758625" className={styles.contactLink}>
+                  07956 758625
                 </a>
                 <p className={styles.contactHours}>
                   Mon-Fri: 9am-6pm
