@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/global.css";
+import { Link } from "react-router-dom";
 
 // Components
 import ContactBar from "./components/ContactBar";
@@ -13,7 +14,7 @@ import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
 import ScrollToTop from "./components/ScrollToTop";
-import ChatWidget from './components/ChatWidget';
+import ChatWidget from "./components/ChatWidget";
 
 // Insurance/Mortgage Pages
 import InsuranceOverview from "./pages/InsuranceOverview";
@@ -65,15 +66,20 @@ function App() {
                     subtitle="Professional guidance to help you make confident financial decisions for your future"
                     backgroundImage="/images/homeinsurance.webp"
                   >
-                    <button
+                    <Link
+                      to="/contact"
                       className="btn-primary"
-                      style={{ marginRight: "1rem" }}
+                      style={{ marginRight: "1rem", textDecoration: "none" }}
                     >
                       Get Expert Advice
-                    </button>
-                    <button className="btn-outline">
+                    </Link>
+                    <Link
+                      to="/mortgage-calculator"
+                      className="btn-outline"
+                      style={{ textDecoration: "none" }}
+                    >
                       Calculate Your Mortgage
-                    </button>
+                    </Link>
                   </Hero>
 
                   <LendersCarousel />

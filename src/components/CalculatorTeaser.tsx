@@ -32,7 +32,7 @@ const CalculatorTeaser: React.FC = () => {
                 <span>Interest rate comparison</span>
               </div>
             </div>
-            <Link to="/calculators" className={styles.cta}>
+            <Link to="/mortgage-calculator" className={styles.cta}>
               Try Our Calculators
               <span className={styles.arrow} aria-hidden="true">
                 →
