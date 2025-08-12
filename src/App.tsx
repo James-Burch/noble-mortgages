@@ -12,7 +12,8 @@ import ProductCards from "./components/ProductCards";
 import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
-import ScrollToTop from "./components/ScrollToTop"; 
+import ScrollToTop from "./components/ScrollToTop";
+import ChatWidget from './components/ChatWidget';
 
 // Insurance/Mortgage Pages
 import InsuranceOverview from "./pages/InsuranceOverview";
@@ -94,6 +95,8 @@ function App() {
                   <CalculatorTeaser />
 
                   <FAQSection />
+
+                  <ChatWidget />
 
                   <ContactCTA />
                 </>
