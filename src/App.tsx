@@ -32,6 +32,8 @@ import BridgingLoans from "./pages/BridgingLoans";
 
 // Other Pages
 import About from "./pages/About";
+import MortgageCalculator from "./pages/MortgageCalculator";
+import Contact from "./pages/Contact";
 
 // Data
 import { mortgageProducts, insuranceProducts } from "./data/products";
@@ -118,17 +120,6 @@ function App() {
               element={<BridgingLoans />}
             />
 
-            {/* Placeholder routes for remaining mortgage pages */}
-            <Route
-              path="/mortgages/self-employed"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Self-Employed</h1>
-                  <p>Self-Employed mortgages page coming soon...</p>
-                </div>
-              }
-            />
-
             {/* Insurance Pages */}
             <Route path="/insurance" element={<InsuranceOverview />} />
             <Route
@@ -155,22 +146,9 @@ function App() {
             {/* Other pages */}
             <Route
               path="/mortgage-calculator"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Mortgage Calculator</h1>
-                  <p>Calculator page coming soon...</p>
-                </div>
-              }
+              element={<MortgageCalculator />}
             />
-            <Route
-              path="/contact"
-              element={
-                <div className="container" style={{ padding: "2rem 0" }}>
-                  <h1>Contact</h1>
-                  <p>Contact page coming soon...</p>
-                </div>
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
 
             {/* Catch all other routes */}
             <Route
