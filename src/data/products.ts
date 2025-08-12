@@ -70,7 +70,7 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Buy-to-let mortgages through limited companies for tax efficiency and portfolio growth",
     link: "/mortgages/limited-companies",
-    image: "/images/image17.webp",
+    image: "/images/apartmentblock.webp",
     type: "mortgage",
   },
   {
