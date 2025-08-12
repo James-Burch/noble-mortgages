@@ -12,6 +12,7 @@ import ProductCards from "./components/ProductCards";
 import CalculatorTeaser from "./components/CalculatorTeaser";
 import FAQSection from "./components/FAQSection";
 import ContactCTA from "./components/ContactCTA";
+import ScrollToTop from "./components/ScrollToTop"; 
 
 // Insurance/Mortgage Pages
 import InsuranceOverview from "./pages/InsuranceOverview";
@@ -41,6 +42,7 @@ import { mortgageProducts, insuranceProducts } from "./data/products";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div
         className="App"
         style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
