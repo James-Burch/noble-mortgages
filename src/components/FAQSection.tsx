@@ -43,19 +43,6 @@ const FAQSection: React.FC = () => {
     }
   };
 
-  // Handle FAQ link - scroll to FAQ section smoothly
-  const handleFAQClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Use a more robust selector approach
-    const faqSection = document.getElementById("faq-section");
-    if (faqSection) {
-      faqSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   return (
     <section
       id="faq-section"
