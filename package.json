@@ -9,6 +9,7 @@
     "framer-motion": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
@@ -16,9 +17,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/generate-sitemap.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "lighthouse": "npx lighthouse https://noblemortgages.co.uk --output=html --output-path=./lighthouse-report.html",
+    "lighthouse-local": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html"
   },
   "eslintConfig": {
     "extends": [
