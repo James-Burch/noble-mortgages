@@ -43,11 +43,31 @@ const FAQSection: React.FC = () => {
     }
   };
 
+  // Handle FAQ link - scroll to FAQ section smoothly
+  const handleFAQClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Use a more robust selector approach
+    const faqSection = document.getElementById("faq-section");
+    if (faqSection) {
+      faqSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
-    <section className={styles.section}>
+    <section
+      id="faq-section"
+      className={`${styles.section} faq-section`}
+      data-section="faq"
+      aria-labelledby="faq-heading"
+    >
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className={styles.title}>
+            Frequently Asked Questions
+          </h2>
           <p className={styles.subtitle}>
             Get quick answers to common questions about mortgages and insurance
           </p>
@@ -93,8 +113,12 @@ const FAQSection: React.FC = () => {
           <p className={styles.footerText}>
             Have more questions? We're here to help with personalized advice.
           </p>
-          <Link to="/faqs" className={styles.viewAllLink}>
-            View All FAQs
+          <Link
+            to="/contact"
+            className={styles.viewAllLink}
+            aria-label="Contact us for more help"
+          >
+            Have another question? Contact us here
             <span className={styles.arrow} aria-hidden="true">
               →
             </span>

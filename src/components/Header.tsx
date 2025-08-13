@@ -83,14 +83,25 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  const toggleMortgages = () => {
-    setIsMortgagesOpen(!isMortgagesOpen);
+  // Desktop dropdown handlers - hover to open, click to navigate
+  const handleMortgagesMouseEnter = () => {
+    setIsMortgagesOpen(true);
     setIsInsuranceOpen(false);
   };
 
-  const toggleInsurance = () => {
-    setIsInsuranceOpen(!isInsuranceOpen);
+  const handleInsuranceMouseEnter = () => {
+    setIsInsuranceOpen(true);
     setIsMortgagesOpen(false);
+  };
+
+  const handleMortgagesClick = () => {
+    navigate("/mortgages");
+    setIsMortgagesOpen(false);
+  };
+
+  const handleInsuranceClick = () => {
+    navigate("/insurance");
+    setIsInsuranceOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -102,12 +113,29 @@ const Header: React.FC = () => {
     }
   };
 
+  // Mobile dropdown handlers - first tap opens, second tap navigates
   const toggleMobileMortgages = () => {
-    setIsMobileMortgagesOpen(!isMobileMortgagesOpen);
+    if (isMobileMortgagesOpen) {
+      // Second tap - navigate to overview
+      navigate("/mortgages");
+      closeMobileMenu();
+    } else {
+      // First tap - open dropdown
+      setIsMobileMortgagesOpen(true);
+      setIsMobileInsuranceOpen(false);
+    }
   };
 
   const toggleMobileInsurance = () => {
-    setIsMobileInsuranceOpen(!isMobileInsuranceOpen);
+    if (isMobileInsuranceOpen) {
+      // Second tap - navigate to overview
+      navigate("/insurance");
+      closeMobileMenu();
+    } else {
+      // First tap - open dropdown
+      setIsMobileInsuranceOpen(true);
+      setIsMobileMortgagesOpen(false);
+    }
   };
 
   const closeMobileMenu = () => {
@@ -175,16 +203,21 @@ const Header: React.FC = () => {
                 </Link>
               </li>
 
-              {/* Mortgages Dropdown */}
-              <li className={styles.dropdown} ref={mortgagesDropdownRef}>
+              {/* Mortgages Dropdown - Hover to open, Click to navigate */}
+              <li
+                className={styles.dropdown}
+                ref={mortgagesDropdownRef}
+                onMouseEnter={handleMortgagesMouseEnter}
+                onMouseLeave={() => setIsMortgagesOpen(false)}
+              >
                 <button
                   className={`${styles.dropdownToggle} ${
                     isMortgagesActive ? styles.active : ""
                   }`}
-                  onClick={toggleMortgages}
+                  onClick={handleMortgagesClick}
                   aria-expanded={isMortgagesOpen}
                   aria-haspopup="true"
-                  aria-label="Mortgages menu"
+                  aria-label="Mortgages menu - click to view overview page"
                 >
                   Mortgages
                   <span
@@ -226,16 +259,21 @@ const Header: React.FC = () => {
                 </ul>
               </li>
 
-              {/* Insurance Dropdown */}
-              <li className={styles.dropdown} ref={insuranceDropdownRef}>
+              {/* Insurance Dropdown - Hover to open, Click to navigate */}
+              <li
+                className={styles.dropdown}
+                ref={insuranceDropdownRef}
+                onMouseEnter={handleInsuranceMouseEnter}
+                onMouseLeave={() => setIsInsuranceOpen(false)}
+              >
                 <button
                   className={`${styles.dropdownToggle} ${
                     isInsuranceActive ? styles.active : ""
                   }`}
-                  onClick={toggleInsurance}
+                  onClick={handleInsuranceClick}
                   aria-expanded={isInsuranceOpen}
                   aria-haspopup="true"
-                  aria-label="Insurance menu"
+                  aria-label="Insurance menu - click to view overview page"
                 >
                   Insurance
                   <span
@@ -394,13 +432,18 @@ const Header: React.FC = () => {
               </Link>
             </li>
 
-            {/* Mobile Mortgages Dropdown */}
+            {/* Mobile Mortgages Dropdown - First tap opens, second tap navigates */}
             <li>
               <button
                 className={styles.mobileDropdownToggle}
                 onClick={toggleMobileMortgages}
                 aria-expanded={isMobileMortgagesOpen}
                 aria-controls="mobile-mortgages-menu"
+                aria-label={
+                  isMobileMortgagesOpen
+                    ? "Mortgages menu open - tap again to view overview page"
+                    : "Open mortgages menu"
+                }
               >
                 Mortgages
                 <span aria-hidden="true">
@@ -428,13 +471,18 @@ const Header: React.FC = () => {
               </ul>
             </li>
 
-            {/* Mobile Insurance Dropdown */}
+            {/* Mobile Insurance Dropdown - First tap opens, second tap navigates */}
             <li>
               <button
                 className={styles.mobileDropdownToggle}
                 onClick={toggleMobileInsurance}
                 aria-expanded={isMobileInsuranceOpen}
                 aria-controls="mobile-insurance-menu"
+                aria-label={
+                  isMobileInsuranceOpen
+                    ? "Insurance menu open - tap again to view overview page"
+                    : "Open insurance menu"
+                }
               >
                 Insurance
                 <span aria-hidden="true">

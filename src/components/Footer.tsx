@@ -1,9 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle FAQ link - scroll to section on homepage or navigate to homepage first
+  const handleFAQClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      // Already on homepage, just scroll to FAQ section
+      const faqSection =
+        document.querySelector(".faq-section") ||
+        document.querySelector('[data-section="faq"]') ||
+        document.querySelector(
+          'section:has(h2:contains("Frequently Asked Questions"))'
+        );
+
+      if (faqSection) {
+        faqSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      // Navigate to homepage first, then scroll to FAQ
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const faqSection =
+          document.querySelector(".faq-section") ||
+          document.querySelector('[data-section="faq"]') ||
+          document.querySelector(
+            'section:has(h2:contains("Frequently Asked Questions"))'
+          );
+
+        if (faqSection) {
+          faqSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -65,9 +108,14 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/faqs" className={styles.footerLink}>
+                <a
+                  href="/#faq"
+                  onClick={handleFAQClick}
+                  className={styles.footerLink}
+                  aria-label="View frequently asked questions on homepage"
+                >
                   FAQs
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/contact" className={styles.footerLink}>
@@ -109,14 +157,6 @@ const Footer: React.FC = () => {
                   Help to Buy
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/mortgages/bridging-loans"
-                  className={styles.footerLink}
-                >
-                  Bridging Loans
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -153,7 +193,7 @@ const Footer: React.FC = () => {
                   to="/insurance/accident-sickness-unemployment"
                   className={styles.footerLink}
                 >
-                  ASU Cover
+                  ASU Insurance
                 </Link>
               </li>
               <li>
