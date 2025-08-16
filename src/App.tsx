@@ -194,10 +194,6 @@ const HomePage = () => {
       />
 
       <main style={{ backgroundColor: "#f8f9fa" }}>
-        <Suspense fallback={<PageLoader />}>
-          <LendersCarousel />
-        </Suspense>
-
         <div style={{ backgroundColor: "white" }}>
           <Suspense fallback={<PageLoader />}>
             <ProductCards
@@ -229,6 +225,9 @@ const HomePage = () => {
             <FAQSection />
           </Suspense>
         </div>
+        <Suspense fallback={<PageLoader />}>
+          <LendersCarousel />
+        </Suspense>
       </main>
 
       <Suspense fallback={<div />}>
