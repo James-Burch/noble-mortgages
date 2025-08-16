@@ -8,7 +8,7 @@ const BridgingLoans: React.FC = () => {
     <PageTemplate
       title="Bridging Loans"
       subtitle="Fast, flexible financing to bridge the gap between buying and selling property"
-      backgroundImage="/images/bridgeimage.webp"
+      backgroundImage="/images/bridgingloanimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

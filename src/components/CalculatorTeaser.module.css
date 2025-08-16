@@ -1,7 +1,7 @@
 /* Calculator Teaser Component Styles */
 .section {
   padding: var(--spacing-4xl) 0;
-  background-color: var(--color-light-grey);
+  background-color: var(--bg-dark);
 }
 
 .container {
@@ -24,12 +24,12 @@
 .title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-lg);
 }
 
 .description {
-  color: var(--color-grey);
+  color: var(--color-white);
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--spacing-2xl);
@@ -50,11 +50,12 @@
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: var(--color-white);
+  background: var(--color-lighter-grey);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
   justify-content: center;
+  font-weight: var(--font-weight-medium);
 }
 
 .feature:hover {
@@ -83,10 +84,11 @@
 
 .cta:hover,
 .cta:focus {
-  background-color: var(--color-primary-dark);
+  background-color: var(--bg-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   outline: none;
+  border: 2px solid var(--color-primary);
 }
 
 .cta:focus-visible {

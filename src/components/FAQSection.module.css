@@ -53,12 +53,12 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-xl);
-  background: none;
+  background: var(--color-lighter-grey);
   border: none;
   text-align: left;
   cursor: pointer;
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
   color: var(--color-secondary);
   transition: all var(--transition-fast);
 }
@@ -108,9 +108,10 @@
 
 .answerContent {
   padding: 0 var(--spacing-xl) var(--spacing-xl);
-  color: var(--color-grey);
+  color: var(--color-black);
   line-height: var(--line-height-relaxed);
   border-top: 1px solid rgba(79, 209, 199, 0.1);
+  background-color: var(--color-lighter-grey);
 }
 
 .footer {
@@ -125,6 +126,7 @@
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-lg);
   font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
 }
 
 .viewAllLink {
@@ -143,9 +145,10 @@
 
 .viewAllLink:hover,
 .viewAllLink:focus {
-  background-color: var(--color-white);
+  background-color: var(--color-lighter-grey);
   color: var(--color-secondary);
   outline: none;
+  border: 2px solid var(--bg-dark);
 }
 
 .viewAllLink:focus-visible {

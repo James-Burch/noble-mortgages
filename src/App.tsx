@@ -55,6 +55,7 @@ const BridgingLoans = lazy(() => import("./pages/BridgingLoans"));
 const About = lazy(() => import("./pages/About"));
 const MortgageCalculator = lazy(() => import("./pages/MortgageCalculator"));
 const Contact = lazy(() => import("./pages/Contact"));
+const SelfEmployed = lazy(() => import("./pages/SelfEmployed"));
 
 // Loading component for better UX
 const PageLoader = () => (
@@ -179,14 +180,17 @@ const SEOWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 // Homepage component with preloaded images
 const HomePage = () => {
   // Preload critical images
-  usePreloadImages(["/images/homeinsurance.webp", "/images/hero-bg.webp"]);
+  usePreloadImages([
+    "/images/mainpageimage.webp",
+    "/images/homeinsurance.webp",
+  ]);
 
   return (
     <>
       <Hero
         title="Your Trusted Mortgage & Insurance Experts"
         subtitle="Professional advice for all your mortgage and insurance needs across the UK"
-        backgroundImage="/images/homeinsurance.webp"
+        backgroundImage="/images/mainpageimage.webp"
       />
 
       <main style={{ backgroundColor: "#f8f9fa" }}>
@@ -327,6 +331,16 @@ function App() {
                     <SEOWrapper>
                       <Suspense fallback={<PageLoader />}>
                         <BuyToLet />
+                      </Suspense>
+                    </SEOWrapper>
+                  }
+                />
+                <Route
+                  path="/mortgages/self-employed"
+                  element={
+                    <SEOWrapper>
+                      <Suspense fallback={<PageLoader />}>
+                        <SelfEmployed />
                       </Suspense>
                     </SEOWrapper>
                   }

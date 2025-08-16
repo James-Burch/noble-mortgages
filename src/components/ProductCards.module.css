@@ -4,7 +4,7 @@
 }
 
 .sectionWhite {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-dark);
 }
 
 .sectionTiffany {
@@ -45,7 +45,7 @@
 }
 
 .card {
-  background: var(--color-white);
+  background: var(--color-lighter-grey);
   border-radius: var(--border-radius-xl);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
@@ -110,7 +110,7 @@
 }
 
 .cardLinkPrimary {
-  color: var(--color-primary);
+  color: var(--color-black);
 }
 
 .cardWrapper:hover .cardLinkPrimary {

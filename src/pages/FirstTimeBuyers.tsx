@@ -8,7 +8,7 @@ const FirstTimeBuyers: React.FC = () => {
     <PageTemplate
       title="First Time Buyers"
       subtitle="Get on the property ladder with expert guidance and access to exclusive schemes"
-      backgroundImage="/images/image1.webp"
+      backgroundImage="/images/firsttimebuyerimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

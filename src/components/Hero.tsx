@@ -12,7 +12,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
-  backgroundImage = "/images/homeinsurance.webp",
+  backgroundImage = "/images/mainpageimage.webp",
   className = "",
   children,
 }) => {

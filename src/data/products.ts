@@ -16,7 +16,16 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Get on the property ladder with our specialist advice and access to exclusive schemes",
     link: "/mortgages/first-time-buyers",
-    image: "/images/image1.webp",
+    image: "/images/firsttimebuyerimage.webp",
+    type: "mortgage",
+  },
+  {
+    id: "remortgage",
+    title: "Remortgage",
+    description:
+      "Save money with a better deal on your existing property with our remortgage service",
+    link: "/mortgages/remortgage",
+    image: "/images/remortgageimage.webp",
     type: "mortgage",
   },
   {
@@ -29,21 +38,12 @@ export const mortgageProducts: ProductCard[] = [
     type: "mortgage",
   },
   {
-    id: "remortgage",
-    title: "Remortgage",
-    description:
-      "Save money with a better deal on your existing property with our remortgage service",
-    link: "/mortgages/remortgage",
-    image: "/images/image2.webp",
-    type: "mortgage",
-  },
-  {
     id: "buy-to-let",
     title: "Buy to Let",
     description:
       "Build your property portfolio with competitive buy-to-let mortgage solutions",
     link: "/mortgages/buy-to-let",
-    image: "/images/apartmentblock.webp",
+    image: "/images/buytoletimage.webp",
     type: "mortgage",
   },
   {
@@ -52,7 +52,7 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Specialist mortgages for new build properties with expert guidance throughout",
     link: "/mortgages/new-build",
-    image: "/images/image4.webp",
+    image: "/images/newbuildimage.webp",
     type: "mortgage",
   },
   {
@@ -61,7 +61,7 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Access government schemes and specialist advice for Help to Buy mortgages",
     link: "/mortgages/help-to-buy",
-    image: "/images/image3.webp",
+    image: "/images/helptobuyimage.webp",
     type: "mortgage",
   },
   {
@@ -79,7 +79,7 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Fast, flexible financing to bridge the gap between buying and selling property",
     link: "/mortgages/bridging-loans",
-    image: "/images/bridgeimage.webp",
+    image: "/images/bridgingloanimage.webp",
     type: "mortgage",
   },
   {
@@ -88,7 +88,7 @@ export const mortgageProducts: ProductCard[] = [
     description:
       "Specialist mortgage solutions for self-employed and contractor borrowers",
     link: "/mortgages/self-employed",
-    image: "/images/image7.webp",
+    image: "/images/selfemployedimage.webp",
     type: "mortgage",
   },
 ];

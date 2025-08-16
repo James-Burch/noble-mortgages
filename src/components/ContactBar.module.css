@@ -1,7 +1,7 @@
 /* Contact Bar Component Styles */
 .contactBar {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-primary);
   padding: var(--spacing-sm) 0;
   font-size: var(--font-size-sm);
 }
@@ -27,7 +27,7 @@
 }
 
 .contactText {
-  color: var(--color-white);
+  color: var(--color-secondary);
   font-weight: var(--font-weight-medium);
 }
 
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  color: var(--color-white);
+  color: var(--color-primary);
   text-decoration: none;
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--border-radius-lg);
@@ -93,14 +93,14 @@
 
 .whatsappLabel {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: var(--font-weight-normal);
 }
 
 .whatsappNumber {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 /* Mobile Styles */

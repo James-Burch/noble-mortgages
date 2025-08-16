@@ -8,7 +8,7 @@ const NewBuild: React.FC = () => {
     <PageTemplate
       title="New Build Mortgages"
       subtitle="Specialist mortgages for new build properties with expert guidance throughout"
-      backgroundImage="/images/image4.webp"
+      backgroundImage="/images/newbuildimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

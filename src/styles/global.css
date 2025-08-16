@@ -75,9 +75,10 @@ p {
 
 /* Links */
 a {
-  color: var(--color-primary-dark);
+  color: var(--color-white);
   text-decoration: none;
   transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
 }
 
 a:hover,

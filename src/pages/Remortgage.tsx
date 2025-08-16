@@ -8,7 +8,7 @@ const Remortgage: React.FC = () => {
     <PageTemplate
       title="Remortgage"
       subtitle="Save money or release equity with our comprehensive remortgage service.y"
-      backgroundImage="/images/image2.webp"
+      backgroundImage="/images/remortgageimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

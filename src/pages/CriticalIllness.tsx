@@ -8,7 +8,7 @@ const CriticalIllness: React.FC = () => {
     <PageTemplate
       title="Critical Illness Cover"
       subtitle="Lump sum payment following diagnosis of a serious illness"
-      backgroundImage="/images/image6.webp"
+      backgroundImage="/images/criticalillnesscover.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

@@ -251,6 +251,9 @@ const Footer: React.FC = () => {
             <p className={styles.copyright}>
               © {currentYear} Noble Mortgages. All rights reserved.
             </p>
+            <p className={styles.copyright}>
+              <a href="https://jamesburch.co.uk" rel="noopener noreferrer" target="_blank">Website Built By James Burch</a>
+            </p>
           </div>
 
           {/* FCA Disclaimer */}

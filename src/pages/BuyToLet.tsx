@@ -8,7 +8,7 @@ const BuyToLet: React.FC = () => {
     <PageTemplate
       title="Buy to Let"
       subtitle="Build your property portfolio with competitive buy-to-let mortgage solutions"
-      backgroundImage="/images/apartmentblock.webp"
+      backgroundImage="/images/buytoletimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

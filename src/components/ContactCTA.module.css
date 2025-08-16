@@ -142,7 +142,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background-color: var(--color-white);
+  background-color: var(--color-lighter-grey);
   color: var(--color-secondary);
   text-decoration: none;
   font-weight: var(--font-weight-bold);
@@ -157,7 +157,7 @@
 .ctaButton:focus {
   transform: translateY(-3px);
   box-shadow: var(--shadow-xl);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--color-white);
   outline: none;
 }
 

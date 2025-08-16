@@ -14,7 +14,7 @@ interface PageTemplateProps {
 const PageTemplate: React.FC<PageTemplateProps> = ({ 
   title, 
   subtitle, 
-  backgroundImage = '/images/homeinsurance.webp',
+  backgroundImage = '/images/mainpageimage.webp',
   children,
   showContactCTA = true 
 }) => {

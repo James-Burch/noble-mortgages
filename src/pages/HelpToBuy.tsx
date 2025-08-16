@@ -8,7 +8,7 @@ const HelpToBuy: React.FC = () => {
     <PageTemplate
       title="Help to Buy"
       subtitle="Access government schemes and specialist advice for Help to Buy mortgages"
-      backgroundImage="/images/image6.webp"
+      backgroundImage="/images/helptobuyimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

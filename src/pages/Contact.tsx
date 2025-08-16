@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
             <div style={{ marginTop: "var(--spacing-2xl)" }}>
               <h3
                 style={{
-                  color: "var(--color-secondary)",
+                  color: "var(--color-primary)",
                   marginBottom: "var(--spacing-lg)",
                 }}
               >
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
               <div style={{ marginBottom: "var(--spacing-lg)" }}>
                 <h4
                   style={{
-                    color: "var(--color-secondary)",
+                    color: "var(--color-white)",
                     marginBottom: "var(--spacing-sm)",
                   }}
                 >
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
               <div style={{ marginBottom: "var(--spacing-lg)" }}>
                 <h4
                   style={{
-                    color: "var(--color-secondary)",
+                    color: "var(--color-white)",
                     marginBottom: "var(--spacing-sm)",
                   }}
                 >
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
               <div>
                 <h4
                   style={{
-                    color: "var(--color-secondary)",
+                    color: "var(--color-white)",
                     marginBottom: "var(--spacing-sm)",
                   }}
                 >

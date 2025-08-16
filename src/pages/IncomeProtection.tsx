@@ -8,7 +8,7 @@ const IncomeProtection: React.FC = () => {
     <PageTemplate
       title="Income Protection"
       subtitle="Replace up to 70% of your income if you cannot work due to illness or injury"
-      backgroundImage="/images/incomeprotection.webp"
+      backgroundImage="/images/incomeprotectionimage.webp"
     >
       <div className={styles.container}>
         {/* Two Column Layout */}

@@ -23,6 +23,7 @@ const Header: React.FC = () => {
     { name: "Home Mover", path: "/mortgages/home-mover" },
     { name: "Remortgage", path: "/mortgages/remortgage" },
     { name: "Buy to Let", path: "/mortgages/buy-to-let" },
+    { name: "Self Employed", path: "/mortgages/self-employed" },
     { name: "New Build", path: "/mortgages/new-build" },
     { name: "Help to Buy", path: "/mortgages/help-to-buy" },
     { name: "Limited Companies", path: "/mortgages/limited-companies" },

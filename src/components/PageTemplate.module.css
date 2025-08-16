@@ -1,6 +1,7 @@
 /* Page Template Styles */
 .content {
   padding: var(--spacing-4xl) 0;
+  background-color: var(--bg-dark);
 }
 
 .container {
@@ -21,7 +22,7 @@
 }
 
 .text {
-  color: var(--color-grey);
+  color: var(--color-white);
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--spacing-lg);
 }
@@ -97,9 +98,9 @@
 .ctaSection {
   text-align: center;
   background: linear-gradient(
-    135deg,
-    var(--color-light-grey) 0%,
-    rgba(79, 209, 199, 0.1) 100%
+    150deg,
+    var(--color-primary) 0%,
+    var(--color-white) 100%
   );
   padding: var(--spacing-2xl);
   border-radius: var(--border-radius-xl);
@@ -110,10 +111,11 @@
 .ctaSection h3 {
   color: var(--color-secondary);
   margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
 }
 
 .ctaSection p {
-  color: var(--color-grey);
+  color: var(--color-black);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -134,10 +136,12 @@
 
 .ctaButton:hover,
 .ctaButton:focus {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   outline: none;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .arrow {
@@ -150,7 +154,7 @@
 
 /* Process Steps */
 .processSteps {
-  background-color: var(--color-light-grey);
+  background-color: var(--color-primary);
   padding: var(--spacing-2xl);
   border-radius: var(--border-radius-xl);
   margin: var(--spacing-2xl) 0;
@@ -168,7 +172,7 @@
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
   padding: var(--spacing-lg);
-  background: var(--color-white);
+  background: var(--color-lighter-grey);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
 }
@@ -197,7 +201,7 @@
 }
 
 .stepContent p {
-  color: var(--color-grey);
+  color: var(--color-black);
   margin: 0;
   line-height: var(--line-height-normal);
 }
