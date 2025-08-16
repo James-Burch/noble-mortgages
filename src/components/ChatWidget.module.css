@@ -101,12 +101,13 @@
 
 .chatContent {
   padding: var(--spacing-lg);
+  background-color: var(--bg-dark);
 }
 
 .chatDescription {
   margin: 0 0 var(--spacing-lg) 0;
   font-size: var(--font-size-sm);
-  color: var(--color-grey);
+  color: var(--color-primary);
 }
 
 .successMessage {
@@ -139,7 +140,7 @@
   margin-bottom: var(--spacing-xs);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .input,

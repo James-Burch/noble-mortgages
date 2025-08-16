@@ -36,7 +36,7 @@ const AccidentSicknessUnemployment: React.FC = () => {
                 <h3>Typical Coverage</h3>
                 <p
                   style={{
-                    color: "var(--color-secondary)",
+                    color: "var(--color-white)",
                     fontSize: "var(--font-size-xl)",
                     fontWeight: "var(--font-weight-bold)",
                   }}

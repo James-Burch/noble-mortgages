@@ -128,20 +128,27 @@ const SelfEmployed: React.FC = () => {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>
+          <h2
+            className={styles.sectionTitle}
+            style={{ color: "var(--color-primary)" }}
+          >
             Types of Self-Employed Borrowers We Help
           </h2>
           <div className={styles.text}>
             <div className={styles.twoColumnSection}>
               <div className={styles.leftColumn}>
-                <h3>Sole Traders & Partnerships</h3>
+                <h3 style={{ color: "var(--color-primary)" }}>
+                  Sole Traders & Partnerships
+                </h3>
                 <p>
                   If you're self-employed as a sole trader or in partnership,
                   we'll help you navigate the income verification process using
                   your SA302s and tax calculations.
                 </p>
 
-                <h3>Limited Company Directors</h3>
+                <h3 style={{ color: "var(--color-primary)" }}>
+                  Limited Company Directors
+                </h3>
                 <p>
                   Company directors with salary plus dividends can access
                   specialist lenders who understand this income structure and
@@ -150,14 +157,18 @@ const SelfEmployed: React.FC = () => {
               </div>
 
               <div className={styles.rightColumn}>
-                <h3>Contractors & Freelancers</h3>
+                <h3 style={{ color: "var(--color-primary)" }}>
+                  Contractors & Freelancers
+                </h3>
                 <p>
                   Day rate contractors and freelancers with regular contracts
                   can access lenders who understand the nature of contract work
                   and assess applications accordingly.
                 </p>
 
-                <h3>Business Owners</h3>
+                <h3 style={{ color: "var(--color-primary)" }}>
+                  Business Owners
+                </h3>
                 <p>
                   Business owners with complex income structures, including
                   retained profits and business investments, can access
@@ -169,7 +180,12 @@ const SelfEmployed: React.FC = () => {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>Documentation You'll Need</h2>
+          <h2
+            className={styles.sectionTitle}
+            style={{ color: "var(--color-primary)" }}
+          >
+            Documentation You'll Need
+          </h2>
           <div className={styles.text}>
             <p>
               The exact documentation required varies depending on your

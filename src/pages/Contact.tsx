@@ -150,7 +150,7 @@ const Contact: React.FC = () => {
         {/* Contact Form Section */}
         <div
           style={{
-            background: "var(--color-light-grey)",
+            background: "var(--color-primary)",
             padding: "var(--spacing-2xl)",
             borderRadius: "var(--border-radius-xl)",
             margin: "var(--spacing-2xl) 0",
@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
         >
           <h2
             className={styles.sectionTitle}
-            style={{ textAlign: "center", marginBottom: "var(--spacing-xl)" }}
+            style={{ textAlign: "center", marginBottom: "var(--spacing-xl)", color: 'var(--color-secondary)' }}
           >
             Tell Us About Your Requirements
           </h2>

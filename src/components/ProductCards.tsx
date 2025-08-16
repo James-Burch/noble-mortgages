@@ -55,7 +55,7 @@ const ProductCards: React.FC<ProductCardsProps> = ({
                   <span
                     className={`${styles.cardLink} ${
                       type === "mortgage"
-                        ? styles.cardLinkPrimary
+                        ? styles.cardLinkWhite
                         : styles.cardLinkWhite
                     }`}
                   >

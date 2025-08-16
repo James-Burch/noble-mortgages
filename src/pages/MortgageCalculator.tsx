@@ -111,7 +111,7 @@ const MortgageCalculatorComponent: React.FC = () => {
   return (
     <div
       style={{
-        background: "var(--color-light-grey)",
+        background: "var(--color-primary)",
         padding: "var(--spacing-2xl)",
         borderRadius: "var(--border-radius-xl)",
         margin: "var(--spacing-2xl) 0",
@@ -119,10 +119,10 @@ const MortgageCalculatorComponent: React.FC = () => {
       }}
     >
       <div style={{ textAlign: "center", marginBottom: "var(--spacing-xl)" }}>
-        <h2 className={styles.sectionTitle}>Calculate Your Mortgage</h2>
+        <h2 style={{color: "var(--color-secondary)"}}>Calculate Your Mortgage</h2>
         <p
           style={{
-            color: "var(--color-grey)",
+            color: "var(--color-white)",
             fontSize: "var(--font-size-lg)",
           }}
         >
@@ -159,7 +159,7 @@ const MortgageCalculatorComponent: React.FC = () => {
           <p
             style={{
               fontSize: "var(--font-size-sm)",
-              color: "var(--color-grey)",
+              color: "var(--color-white)",
               marginTop: "var(--spacing-xs)",
             }}
           >

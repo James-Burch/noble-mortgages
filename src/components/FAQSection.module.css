@@ -53,13 +53,13 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-xl);
-  background: var(--color-lighter-grey);
+  background: var(--bg-dark);
   border: none;
   text-align: left;
   cursor: pointer;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   transition: all var(--transition-fast);
 }
 
@@ -108,10 +108,10 @@
 
 .answerContent {
   padding: 0 var(--spacing-xl) var(--spacing-xl);
-  color: var(--color-black);
+  color: var(--color-white);
   line-height: var(--line-height-relaxed);
   border-top: 1px solid rgba(79, 209, 199, 0.1);
-  background-color: var(--color-lighter-grey);
+  background-color: var(--bg-dark);
 }
 
 .footer {
