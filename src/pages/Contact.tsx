@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import PageTemplate from "../components/PageTemplate";
 import styles from "../components/PageTemplate.module.css";
 
@@ -10,6 +11,11 @@ const Contact: React.FC = () => {
     mortgageType: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -23,10 +29,48 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here (Netlify forms or email service)
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const serviceId =
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || "SERVICE_ID";
+      const templateId =
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "TEMPLATE_ID";
+      const publicKey =
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "PUBLIC_KEY";
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        service_type: formData.mortgageType,
+        message: formData.message,
+        to_name: "Noble Mortgages Team",
+        to_email: "admin@noblemortgages.co.uk",
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setSubmitStatus("success");
+      // Reset form after successful submission
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        mortgageType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email send failed:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -159,10 +203,47 @@ const Contact: React.FC = () => {
         >
           <h2
             className={styles.sectionTitle}
-            style={{ textAlign: "center", marginBottom: "var(--spacing-xl)", color: 'var(--color-secondary)' }}
+            style={{
+              textAlign: "center",
+              marginBottom: "var(--spacing-xl)",
+              color: "var(--color-secondary)",
+            }}
           >
             Tell Us About Your Requirements
           </h2>
+
+          {/* Status Messages */}
+          {submitStatus === "success" && (
+            <div
+              style={{
+                background: "var(--color-secondary)",
+                color: "white",
+                padding: "var(--spacing-md)",
+                borderRadius: "var(--border-radius-lg)",
+                marginBottom: "var(--spacing-lg)",
+                textAlign: "center",
+              }}
+            >
+              ✅ Thank you! Your message has been sent successfully. We'll get
+              back to you within 24 hours.
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div
+              style={{
+                background: "#dc3545",
+                color: "white",
+                padding: "var(--spacing-md)",
+                borderRadius: "var(--border-radius-lg)",
+                marginBottom: "var(--spacing-lg)",
+                textAlign: "center",
+              }}
+            >
+              ❌ Sorry, there was an error sending your message. Please try
+              again or call us at 07956 758625.
+            </div>
+          )}
 
           <form
             onSubmit={handleSubmit}
@@ -196,6 +277,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="John Smith"
+                  disabled={isSubmitting}
                   style={{
                     width: "100%",
                     padding: "var(--spacing-md)",
@@ -204,6 +286,7 @@ const Contact: React.FC = () => {
                     fontSize: "var(--font-size-base)",
                     transition: "all var(--transition-fast)",
                     backgroundColor: "var(--color-white)",
+                    opacity: isSubmitting ? 0.7 : 1,
                   }}
                 />
               </div>
@@ -226,6 +309,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="john.smith@example.com"
+                  disabled={isSubmitting}
                   style={{
                     width: "100%",
                     padding: "var(--spacing-md)",
@@ -234,6 +318,7 @@ const Contact: React.FC = () => {
                     fontSize: "var(--font-size-base)",
                     transition: "all var(--transition-fast)",
                     backgroundColor: "var(--color-white)",
+                    opacity: isSubmitting ? 0.7 : 1,
                   }}
                 />
               </div>
@@ -267,6 +352,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="07123 456789"
+                  disabled={isSubmitting}
                   style={{
                     width: "100%",
                     padding: "var(--spacing-md)",
@@ -275,6 +361,7 @@ const Contact: React.FC = () => {
                     fontSize: "var(--font-size-base)",
                     transition: "all var(--transition-fast)",
                     backgroundColor: "var(--color-white)",
+                    opacity: isSubmitting ? 0.7 : 1,
                   }}
                 />
               </div>
@@ -294,6 +381,7 @@ const Contact: React.FC = () => {
                   name="mortgageType"
                   value={formData.mortgageType}
                   onChange={handleInputChange}
+                  disabled={isSubmitting}
                   style={{
                     width: "100%",
                     padding: "var(--spacing-md)",
@@ -302,6 +390,7 @@ const Contact: React.FC = () => {
                     fontSize: "var(--font-size-base)",
                     transition: "all var(--transition-fast)",
                     backgroundColor: "var(--color-white)",
+                    opacity: isSubmitting ? 0.7 : 1,
                   }}
                 >
                   <option value="">Select service type</option>
@@ -340,6 +429,7 @@ const Contact: React.FC = () => {
                 onChange={handleInputChange}
                 rows={5}
                 placeholder="Tell us about your situation, timeline, or any specific requirements..."
+                disabled={isSubmitting}
                 style={{
                   width: "100%",
                   padding: "var(--spacing-md)",
@@ -350,6 +440,7 @@ const Contact: React.FC = () => {
                   backgroundColor: "var(--color-white)",
                   resize: "vertical",
                   fontFamily: "inherit",
+                  opacity: isSubmitting ? 0.7 : 1,
                 }}
               />
             </div>
@@ -358,14 +449,17 @@ const Contact: React.FC = () => {
             <div style={{ textAlign: "center" }}>
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className={styles.ctaButton}
                 style={{
                   fontSize: "var(--font-size-lg)",
                   padding: "var(--spacing-lg) var(--spacing-3xl)",
                   minWidth: "300px",
+                  opacity: isSubmitting ? 0.7 : 1,
+                  cursor: isSubmitting ? "not-allowed" : "pointer",
                 }}
               >
-                Get Free Mortgage Advice
+                {isSubmitting ? "Sending..." : "Get Free Mortgage Advice"}
               </button>
             </div>
 
