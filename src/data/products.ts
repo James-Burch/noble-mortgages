@@ -109,7 +109,7 @@ export const insuranceProducts: ProductCard[] = [
     description:
       "Replace up to 70% of your income if you cannot work due to illness or injury",
     link: "/insurance/income-protection",
-    image: "/images/incomeprotection.webp",
+    image: "/images/incomeprotectionimage.webp",
     type: "insurance",
   },
   {
@@ -117,7 +117,7 @@ export const insuranceProducts: ProductCard[] = [
     title: "Critical Illness Cover",
     description: "Lump sum payment following diagnosis of a serious illness",
     link: "/insurance/critical-illness",
-    image: "/images/image6.webp",
+    image: "/images/criticalillnesscover.webp",
     type: "insurance",
   },
   {
