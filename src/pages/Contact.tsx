@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import PageTemplate from "../components/PageTemplate";
 import styles from "../components/PageTemplate.module.css";
 
@@ -17,6 +18,29 @@ const Contact: React.FC = () => {
     "idle" | "success" | "error"
   >("idle");
 
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  // Function to convert dropdown values to readable text
+  const getReadableServiceType = (value: string): string => {
+    const serviceTypes: { [key: string]: string } = {
+      "first-time-buyer": "First Time Buyer",
+      "home-mover": "Home Mover",
+      remortgage: "Remortgage",
+      "buy-to-let": "Buy to Let",
+      "new-build": "New Build",
+      "help-to-buy": "Help to Buy",
+      "limited-companies": "Limited Companies",
+      "bridging-loans": "Bridging Loans",
+      "life-insurance": "Life Insurance",
+      "income-protection": "Income Protection",
+      "critical-illness": "Critical Illness",
+      "home-insurance": "Home Insurance",
+      other: "Other",
+    };
+
+    return serviceTypes[value] || value || "General Inquiry";
+  };
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -31,33 +55,53 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (
+      !formData.fullName.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
+    // Validate reCAPTCHA
+    const recaptchaValue = recaptchaRef.current?.getValue();
+    if (!recaptchaValue) {
+      alert("Please complete the reCAPTCHA verification");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      const serviceId =
-        process.env.REACT_APP_EMAILJS_SERVICE_ID || "SERVICE_ID";
-      const templateId =
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "TEMPLATE_ID";
-      const publicKey =
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "PUBLIC_KEY";
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-      // Prepare template parameters
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration missing.");
+      }
+
       const templateParams = {
         from_name: formData.fullName,
         from_email: formData.email,
-        phone: formData.phone,
-        service_type: formData.mortgageType,
+        phone: formData.phone || "Not provided",
+        inquiry_type: getReadableServiceType(formData.mortgageType),
         message: formData.message,
+        submission_date: new Date().toLocaleDateString("en-GB"),
+        submission_time: new Date().toLocaleTimeString("en-GB"),
         to_name: "Noble Mortgages Team",
         to_email: "admin@noblemortgages.co.uk",
+        "g-recaptcha-response": recaptchaValue,
       };
 
-      // Send email using EmailJS
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus("success");
-      // Reset form after successful submission
+
       setFormData({
         fullName: "",
         email: "",
@@ -65,9 +109,11 @@ const Contact: React.FC = () => {
         mortgageType: "",
         message: "",
       });
+
+      recaptchaRef.current?.reset();
     } catch (error) {
-      console.error("Email send failed:", error);
       setSubmitStatus("error");
+      recaptchaRef.current?.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -216,12 +262,13 @@ const Contact: React.FC = () => {
           {submitStatus === "success" && (
             <div
               style={{
-                background: "var(--color-secondary)",
-                color: "white",
+                background: "#d4edda",
+                color: "#155724",
                 padding: "var(--spacing-md)",
                 borderRadius: "var(--border-radius-lg)",
                 marginBottom: "var(--spacing-lg)",
                 textAlign: "center",
+                border: "1px solid #c3e6cb",
               }}
             >
               ✅ Thank you! Your message has been sent successfully. We'll get
@@ -232,12 +279,13 @@ const Contact: React.FC = () => {
           {submitStatus === "error" && (
             <div
               style={{
-                background: "#dc3545",
-                color: "white",
+                background: "#f8d7da",
+                color: "#721c24",
                 padding: "var(--spacing-md)",
                 borderRadius: "var(--border-radius-lg)",
                 marginBottom: "var(--spacing-lg)",
                 textAlign: "center",
+                border: "1px solid #f5c6cb",
               }}
             >
               ❌ Sorry, there was an error sending your message. Please try
@@ -412,7 +460,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Message Field */}
-            <div style={{ marginBottom: "var(--spacing-xl)" }}>
+            <div style={{ marginBottom: "var(--spacing-lg)" }}>
               <label
                 style={{
                   display: "block",
@@ -421,13 +469,14 @@ const Contact: React.FC = () => {
                   color: "var(--color-secondary)",
                 }}
               >
-                Additional Information
+                Additional Information *
               </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={5}
+                required
                 placeholder="Tell us about your situation, timeline, or any specific requirements..."
                 disabled={isSubmitting}
                 style={{
@@ -442,6 +491,22 @@ const Contact: React.FC = () => {
                   fontFamily: "inherit",
                   opacity: isSubmitting ? 0.7 : 1,
                 }}
+              />
+            </div>
+
+            {/* reCAPTCHA */}
+            <div
+              style={{
+                marginBottom: "var(--spacing-lg)",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY!}
+                theme="light"
+                size="normal"
               />
             </div>
 
