@@ -1,0 +1,94 @@
+/* Scroll to Top Button Styles */
+.scrollToTop {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  z-index: 9999; /* Much higher z-index to ensure it's above chat widgets */
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.scrollToTop:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.scrollToTop:focus {
+  outline: none;
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(79, 209, 199, 0.3);
+}
+
+.scrollToTop:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+}
+
+.icon {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-white);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.scrollToTop:hover .icon {
+  transform: translateY(-1px);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+}
+
+/* Position above chat widget on mobile */
+@media (max-width: 640px) {
+  .scrollToTop {
+    bottom: calc(var(--spacing-lg) + 80px); /* Move up to avoid chat widget */
+  }
+}
+
+/* Additional positioning to avoid chat widget overlap */
+@media (min-width: 641px) {
+  .scrollToTop {
+    right: calc(
+      var(--spacing-xl) + 80px
+    ); /* Move left on larger screens if chat widget is on right */
+  }
+}

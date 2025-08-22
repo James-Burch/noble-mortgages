@@ -24,6 +24,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import ScrollToTop from "./components/ScrollToTop";
 import ChatWidget from "./components/ChatWidget";
+import ScrollTopButton from './components/ScrollTopButton';
 
 // Lazy load heavy components for better performance
 const LendersCarousel = lazy(() => import("./components/LendersCarousel"));
@@ -270,6 +271,7 @@ function App() {
           <div className="app">
             <Header />
             <ScrollToTop />
+            <ScrollTopButton />
             <ChatWidget />
 
             <main>
