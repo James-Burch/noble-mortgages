@@ -163,8 +163,8 @@ const MortgageCalculatorComponent: React.FC = () => {
               marginTop: "var(--spacing-xs)",
             }}
           >
-            First-time buyers pay no stamp duty up to £300,000 (properties under
-            £500,000)
+            As of April 2025 first-time buyers pay no stamp duty up to £300,000 (properties under
+            £500,000). However, it is your responsibility to check your SDLT status.
           </p>
         </div>
 

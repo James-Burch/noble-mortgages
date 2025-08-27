@@ -154,7 +154,7 @@ Please get in touch when convenient.`;
           <div className={styles.chatHeader}>
             <div className={styles.chatHeaderContent}>
               <h3 id="chat-title">Get Expert Advice</h3>
-              <p>Free mortgage consultation</p>
+              <p>Free discovery call</p>
             </div>
             <button
               onClick={handleClose}

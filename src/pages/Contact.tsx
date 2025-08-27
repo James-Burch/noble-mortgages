@@ -134,8 +134,7 @@ const Contact: React.FC = () => {
               <p>
                 Ready to take the next step? Our qualified mortgage and
                 insurance advisors are here to help you make confident financial
-                decisions. Get in touch today for your free, no-obligation
-                consultation.
+                decisions. Get in touch today for your free discovery call.
               </p>
               <p>
                 Whether you're looking to buy your first home, remortgage, or
@@ -227,7 +226,7 @@ const Contact: React.FC = () => {
                 Why Choose Us?
               </h3>
               <p style={{ color: "rgba(255, 255, 255, 0.95)" }}>
-                ✓ No fees to you - completely free advice
+                ✓ Free initial discovery call
                 <br />✓ Access to 90+ lenders
                 <br />✓ FCA regulated for your protection
                 <br />✓ Whole of market access

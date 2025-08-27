@@ -64,6 +64,36 @@ const FirstTimeBuyers: React.FC = () => {
           </div>
         </div>
 
+        {/* First-Time Buyer Definition Section */}
+        <div className={styles.infoSection}>
+          <h2 className={styles.sectionTitle}>
+            What Qualifies as a First-Time Buyer?
+          </h2>
+          <div className={styles.definitionBox}>
+            <p>
+              In order to count as a first-time buyer, a purchaser must not,
+              either alone or with others, have previously acquired a major
+              interest in a dwelling or{" "}
+              <strong>an equivalent interest in land</strong>{" "}
+              <strong>situated anywhere in the world</strong>, regardless of the
+              value of that interest.
+            </p>
+            <p>
+              This includes previous acquisitions by inheritance or gift, or by
+              a financial institution on behalf of a person under an alternative
+              finance scheme.
+            </p>
+            <p>
+              This restriction does not apply where the interest acquired was
+              the grant or assignment of a lease with less than 21 years to run.
+            </p>
+            <p>
+              <strong>Important:</strong> If the property is purchased jointly,
+              all the purchasers must meet these conditions.
+            </p>
+          </div>
+        </div>
+
         <div className={styles.processSteps}>
           <h2 className={styles.sectionTitle}>The First-Time Buyer Process</h2>
 
@@ -125,11 +155,11 @@ const FirstTimeBuyers: React.FC = () => {
         <div className={styles.ctaSection}>
           <h3>Ready to Take Your First Step?</h3>
           <p>
-            Book your free consultation today and let us guide you onto the
+            Book your free discovery call today and let us guide you onto the
             property ladder.
           </p>
           <Link to="/contact" className={styles.ctaButton}>
-            Book Free Consultation
+            Book Free Discovery Call
             <span className={styles.arrow} aria-hidden="true">
               →
             </span>

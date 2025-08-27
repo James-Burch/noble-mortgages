@@ -108,7 +108,7 @@ const About: React.FC = () => {
             <div className={styles.stepContent}>
               <h4>No Obligation Advice</h4>
               <p>
-                Our initial consultation is completely free with no obligation,
+                Our initial discovery call is completely free with no obligation,
                 allowing you to make informed decisions.
               </p>
             </div>
@@ -157,7 +157,7 @@ const About: React.FC = () => {
         <div className={styles.ctaSection}>
           <h3>Ready to Get Started?</h3>
           <p>
-            Contact us today for a free, no-obligation consultation and discover
+            Contact us today for a free, no obligation and discover
             how we can help you achieve your financial goals.
           </p>
           <Link to="/contact" className={styles.ctaButton}>

@@ -206,6 +206,15 @@
   line-height: var(--line-height-normal);
 }
 
+.definitionBox {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  border-right: 4px solid var(--color-primary);
+  margin: 1rem 0;
+  color: var(--color-primary);
+}
+
 /* Responsive Design */
 @media (min-width: 640px) {
   .container {

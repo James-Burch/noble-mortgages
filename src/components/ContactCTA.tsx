@@ -17,7 +17,7 @@ const ContactCTA: React.FC = () => {
             <div className={styles.benefits}>
               <div className={styles.benefit}>
                 <span className={styles.checkmark}>✓</span>
-                <span>Free initial consultation</span>
+                <span>Free initial discovery call</span>
               </div>
               <div className={styles.benefit}>
                 <span className={styles.checkmark}>✓</span>

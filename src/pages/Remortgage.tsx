@@ -114,10 +114,10 @@ const Remortgage: React.FC = () => {
         <div className={styles.ctaSection}>
           <h3>Could You Save Money by Remortgaging?</h3>
           <p>
-            Get a free remortgage review and discover how much you could save.
+            Get a free remortgage review call and discover how much you could save.
           </p>
           <Link to="/contact" className={styles.ctaButton}>
-            Get Free Remortgage Review
+            Get Free Remortgage Review Call
             <span className={styles.arrow} aria-hidden="true">
               →
             </span>
