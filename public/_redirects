@@ -1,0 +1,7 @@
+# Static assets should NOT redirect
+/static/*    /static/:splat    200
+/*.js        /:splat.js        200
+/*.css       /:splat.css       200
+
+# Only redirect page routes to index.html
+/*           /index.html       200

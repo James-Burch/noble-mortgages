@@ -1,0 +1,90 @@
+/* Scroll to Top Button Styles */
+.scrollToTop {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  z-index: var(--z-scroll-top);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.scrollToTop:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.scrollToTop:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-xl);
+}
+
+.scrollToTop:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+}
+
+.icon {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-white);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.scrollToTop:hover .icon {
+  transform: translateY(-1px);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+}
+
+/* Stack above chat widget on all screens */
+.scrollToTop {
+  bottom: calc(var(--spacing-xl) + 70px);
+}
+
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: calc(var(--spacing-lg) + 60px);
+  }
+}
