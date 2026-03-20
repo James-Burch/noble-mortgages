@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import styles from "../components/PageTemplate.module.css";
 
 const NotFound: React.FC = () => {
   return (
